@@ -1,13 +1,13 @@
 import Validator from '../nickname';
 
 test.each([
-  'mari-123m', 'mari', 'MA', 'mari123M', 'mari_12mari', 'mari-1-mari', 'mari_m', 'mari123_m', 'mari123-m',
+  'evgn-123m', 'jeka', 'EP', 'EgPr123M', 'Egrp_12mari', 'jhon-1-jhon', 'jack_p', 'evgn123_p', 'EePp123-p',
 ])(('should validate number'), (data) => {
   expect(Validator.validateUsername(data)).toBe(true);
 });
 
 test.each([
-  'mari-1234', '1mari', '_MA', '-mari123', 'mari12345mari', '@mari1', 'mari!m', 'mari123_', 'mari123-', 'Марина',
+  'evgn-1234', '1evgn', '_EP', '-evgn123', 'jack12345jack', '@Evgen1', 'Ev!gen', 'Pryan123_', 'Prya123-', 'Евгений',
 ])(('should not validate number'), (data) => {
   expect(() => Validator.validateUsername(data)).toThrow();
 });
